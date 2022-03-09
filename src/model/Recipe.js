@@ -15,6 +15,11 @@ export default class Recipe {
         <p className="recipe-author">
           by {this.author.name.first} {this.author.name.last}
         </p>
+
+        <div className="recipe-step-heroimage">
+            <img src={this.image} alt={this.title} />
+        </div>
+
         <ul className="recipe-step-list">
           {this.description.map((d, index) => (
             <li className="recipe-step">
