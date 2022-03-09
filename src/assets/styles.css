@@ -82,6 +82,13 @@ li.recipe-card > h2 {
   letter-spacing: 1.6px;
 }
 
+li.recipe-card > p.recipe-author {
+  text-align: center;
+  padding-bottom: 2rem;
+  color: var(--dark-muted);
+  text-transform: capitalize;
+}
+
 ul.recipe-step-list {
   display: flex;
   flex-direction: column;

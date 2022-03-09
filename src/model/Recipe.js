@@ -12,9 +12,12 @@ export default class Recipe {
     return (
       <>
         <h2>{this.title}</h2>
-        <ul class="recipe-step-list">
+        <p className="recipe-author">
+          by {this.author.name.first} {this.author.name.last}
+        </p>
+        <ul className="recipe-step-list">
           {this.description.map((d, index) => (
-            <li class="recipe-step">
+            <li className="recipe-step">
               <div className="recipe-step-number-box">
                 <p className="recipe-step-number">{index + 1}</p>
               </div>
