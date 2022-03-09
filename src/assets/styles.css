@@ -71,24 +71,55 @@ li.recipe-card {
   padding: 4rem;
   border-radius: 8px;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-  width: 40rem;
+  width: 64rem;
 }
 
-.recipe-description {
-  margin: 2rem 0;
-  padding: 1.2rem;
+li.recipe-card > h2 {
+  text-align: center;
+  margin-bottom: 1.2rem;
+  text-transform: uppercase;
+  line-height: 1.4;
+  letter-spacing: 1.6px;
+}
+
+ul.recipe-step-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.recipe-step-number-box {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  bottom: -1.4rem;
+}
+
+.recipe-step-number {
+  font-size: 2rem;
+  border-radius: 99px;
+  padding: 0.2rem 2.4rem;
+  background-color: var(--light);
+  border: 1px solid var(--dark-muted);
+  text-align: center;
+}
+
+.recipe-step-body {
+  padding: 2.4rem;
+  padding-top: 2.4rem;
+  line-height: 1.6;
   border: 1px solid var(--dark-muted);
   text-align: justify;
   position: relative;
 }
 
-.recipe-description::first-letter {
+.recipe-step-body::first-letter {
   background-color: var(--dark-muted);
   color: var(--light);
   padding: 0.8rem;
-  font-size: 200%;
-  margin-right: 0.4rem;
+  font-size: 4rem;
+  margin-right: 1rem;
   position: absolute;
-  line-height: 2;
   float: left;
 }
