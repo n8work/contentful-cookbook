@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Entry from './model/Entry';
+import Recipe from './model/Recipe';
 var contentful = require('contentful');
 
 const client = contentful.createClient({
@@ -8,18 +8,22 @@ const client = contentful.createClient({
 });
 
 function App() {
-  const [entries, setEntries] = useState([]);
+  const [recipes, setRecipes] = useState([]);
 
   useEffect(() => {
-    fetchEntries();
+    fetchRecipes();
   }, []);
 
-  function fetchEntries() {
-    client.getEntries().then(function (untypedEntries) {
+  function fetchRecipes() {
+    const query = { content_type: 'wbsRecipe' };
+
+    client.getEntries(query).then(function (untypedRecipes) {
       // https://www.contentful.com/developers/docs/references/content-preview-api/#/reference/entries/entry
 
-      setEntries(
-        untypedEntries.items.map((untypedEntry) => new Entry(untypedEntry))
+      setRecipes(
+        untypedRecipes.items.map((untypedRecipe) =>
+          Recipe.fromUntyped(untypedRecipe)
+        )
       );
     });
   }
@@ -34,11 +38,11 @@ function App() {
       </header>
 
       <section className="container">
-        <ul className="entries">
-          {entries.map((entry) => {
+        <ul className="recipe-list">
+          {recipes.map((recipe) => {
             return (
-              <li key={entry.id} className="entry-card">
-                {entry.render()}
+              <li key={recipe.id} className="recipe-card">
+                {recipe.render()}
               </li>
             );
           })}
