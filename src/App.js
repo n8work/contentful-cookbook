@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import { Routes, Route, NavLink } from "react-router-dom";
 import Recipe from './model/Recipe';
 var contentful = require('contentful');
 
@@ -13,6 +15,26 @@ function App() {
   useEffect(() => {
     fetchRecipes();
   }, []);
+
+  const { t, i18n } = useTranslation();
+
+  const setLangEN = () => {
+    console.log("setLang -> EN");
+    i18n.changeLanguage('en');
+  }
+  
+  const setLangDE = () => {
+    console.log("setLang -> DE");
+    i18n.changeLanguage('de');
+  }
+
+  const setLangFR = () => {
+    console.log("setLang -> FR");
+    i18n.changeLanguage('fr');
+  }
+
+  let activeCn = "navlinkLang active";
+  let deactiveCn = "navlinkLang";
 
   function fetchRecipes() {
     const query = { content_type: 'wbsRecipe' };
@@ -31,9 +53,22 @@ function App() {
   return (
     <div className="App">
       <header className="container">
-        <h1>Worldwide Cookbook</h1>
+
+        <div className="languageSwitcher">
+          <button onClick={setLangEN} className="buttonLang">English</button>
+          <button onClick={setLangDE} className="buttonLang">Deutsch</button>
+          <button onClick={setLangFR} className="buttonLang">Français</button>
+
+          {/* */}
+          <NavLink to="/en/" className={ ({isActive}) => isActive ? activeCn : deactiveCn }>🇺🇸</NavLink>
+          <NavLink to="/de/" className={ ({isActive}) => isActive ? activeCn : deactiveCn }>🇩🇪</NavLink>
+          <NavLink to="/fr/" className={ ({isActive}) => isActive ? activeCn : deactiveCn }>🇫🇷</NavLink> 
+          {/* */}
+        </div>
+
+        <h1> {t('cookbook.headline')}</h1>
         <p className="tagline">
-          Meals from around the world, for every occasion
+        {t('cookbook.tagline')}
         </p>
       </header>
 
@@ -48,6 +83,11 @@ function App() {
           })}
         </ul>
       </section>
+
+        <Routes>
+          <Route path="/" element={''} />
+        </Routes>
+
     </div>
   );
 }

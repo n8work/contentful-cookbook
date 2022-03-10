@@ -43,6 +43,35 @@ body {
   opacity: 0.6;
 }
 
+/* LANGUAGES */
+
+.languageSwitcher {
+  margin-bottom: .4rem !important;
+  text-align: center;
+}
+
+.buttonLang {
+  font-family: 'Merriweather', serif;
+  text-transform: uppercase;
+  padding: .4rem;
+  margin: .4rem;
+  cursor: pointer;
+}
+
+.navlinkLang {
+  padding: .2rem;
+  margin: .2rem;
+  text-decoration: none;
+  border: 1px solid var(--light);
+  border-radius: 2rem;
+}
+.navlinkLang:hover {
+  background-color:rgba(36, 36, 36, 0.6);
+}
+.navlinkLang.active {
+  background-color:rgba(139, 139, 139, 0.6);
+}
+
 /* HEADER */
 
 header {
@@ -120,6 +149,7 @@ ul.recipe-step-list {
   overflow: hidden;
   background-color: var(--dark);
 }
+
 .recipe-step-heroimage img {
   flex-shrink: 0;
   min-width: 100%;

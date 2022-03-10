@@ -22,11 +22,11 @@ export default class Recipe {
 
         <ul className="recipe-step-list">
           {this.description.map((d, index) => (
-            <li className="recipe-step">
+            <li key={Math.random()} className="recipe-step">
               <div className="recipe-step-number-box">
                 <p className="recipe-step-number">{index + 1}</p>
               </div>
-              <p key={Math.random()} className="recipe-step-body">
+              <p className="recipe-step-body">
                 {d}
               </p>
             </li>
@@ -66,8 +66,8 @@ export default class Recipe {
     const date = Date.parse(data.sys.createdAt);
 
     let recipe = new Recipe(id, title, description, image, author, date);
-    console.log('======== RECIPE ========');
-    console.log(recipe);
+    // console.log('======== RECIPE ========');
+    // console.log(recipe);
     return recipe;
   }
 }
