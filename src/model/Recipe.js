@@ -48,8 +48,7 @@ export default class Recipe {
   }
 
   static fromUntyped(data) {
-    // console.log(data);
-
+    console.log(data);
     const r = data.fields;
 
     // Id
