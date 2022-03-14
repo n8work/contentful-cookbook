@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import RecipeComponent from './components/RecipeComponent';
 import Recipe from './model/Recipe';
 var contentful = require('contentful');
 
@@ -42,7 +43,7 @@ function App() {
           {recipes.map((recipe) => {
             return (
               <li key={recipe.id} className="recipe-card">
-                {recipe.render()}
+                <RecipeComponent recipe={recipe} />
               </li>
             );
           })}

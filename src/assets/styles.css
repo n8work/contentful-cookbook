@@ -70,7 +70,7 @@ ul.recipe-list {
 li.recipe-card {
   padding: 4rem;
   border-radius: 8px;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 8px 0px;
   width: 64rem;
 }
 
@@ -89,15 +89,25 @@ li.recipe-card > p.recipe-author {
   text-transform: capitalize;
 }
 
+.recipe-step-heroimage {
+  margin-bottom: 3.2rem;
+}
+
 ul.recipe-step-list {
   display: flex;
   flex-direction: column;
   gap: 1.6rem;
 }
 
-.recipe-step {
+li.recipe-step {
+  cursor: pointer;
   display: flex;
   flex-direction: column;
+  transition: all 0.3s;
+}
+
+.recipe-step-body:hover {
+  opacity: 0.4;
 }
 
 .recipe-step-number-box {
@@ -115,6 +125,17 @@ ul.recipe-step-list {
   transform: translate(0, 50%);
 }
 
+.recipe-step-number-box.complete {
+  background-color: var(--light);
+  border: 1px solid var(--dark);
+}
+
+/* The checkmark icon */
+.recipe-step-number-box > i {
+  color: var(--dark);
+  font-size: 1.2rem;
+}
+
 .recipe-step-number {
   font-size: 1.4rem;
   font-weight: bolder;
@@ -122,15 +143,14 @@ ul.recipe-step-list {
 }
 
 .recipe-step-heroimage {
-  /* border: 1px solid var(--dark-muted); */
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 25px 20px -20px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 25px 20px -20px;
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
   background-color: var(--dark);
 }
+
 .recipe-step-heroimage img {
   flex-shrink: 0;
   min-width: 100%;
@@ -144,6 +164,10 @@ ul.recipe-step-list {
   border: 1px dashed var(--dark-muted);
   text-align: justify;
   position: relative;
+}
+
+.enjoy-message {
+  margin: 2.4rem 0;
 }
 
 .gallery {
