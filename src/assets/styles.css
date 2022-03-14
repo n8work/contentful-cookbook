@@ -92,7 +92,7 @@ li.recipe-card > p.recipe-author {
 ul.recipe-step-list {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.6rem;
 }
 
 .recipe-step {
