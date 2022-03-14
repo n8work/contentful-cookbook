@@ -52,7 +52,7 @@ header {
   text-align: center;
 }
 
-header>.tagline {
+header > .tagline {
   text-transform: capitalize;
   opacity: 0.4;
 }
@@ -74,7 +74,7 @@ li.recipe-card {
   width: 64rem;
 }
 
-li.recipe-card>h2 {
+li.recipe-card > h2 {
   text-align: center;
   margin-bottom: 1.2rem;
   text-transform: uppercase;
@@ -82,7 +82,7 @@ li.recipe-card>h2 {
   letter-spacing: 1.6px;
 }
 
-li.recipe-card>p.recipe-author {
+li.recipe-card > p.recipe-author {
   text-align: center;
   padding-bottom: 2rem;
   color: var(--dark-muted);
