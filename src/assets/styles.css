@@ -1,6 +1,7 @@
 /* COLORS */
 :root {
   --dark: #444444;
+  --dark-muted: rgba(69, 69, 69, 0.6);
   --light: #f1f1f1;
 }
 
@@ -46,6 +47,7 @@ body {
 
 header {
   padding: 6.4rem 0;
+  margin-bottom: 2.4rem !important;
   border-bottom: 1px dashed var(--dark);
   text-align: center;
 }
@@ -57,7 +59,7 @@ header > .tagline {
 
 /* ENTRY CARD */
 
-ul.entries {
+ul.recipe-list {
   padding: 2rem;
   display: flex;
   flex-direction: column;
@@ -65,9 +67,80 @@ ul.entries {
   gap: 2rem;
 }
 
-li.entry-card {
+li.recipe-card {
   padding: 4rem;
   border-radius: 8px;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-  width: 40rem;
+  width: 64rem;
+}
+
+li.recipe-card > h2 {
+  text-align: center;
+  margin-bottom: 1.2rem;
+  text-transform: uppercase;
+  line-height: 1.4;
+  letter-spacing: 1.6px;
+}
+
+li.recipe-card > p.recipe-author {
+  text-align: center;
+  padding-bottom: 2rem;
+  color: var(--dark-muted);
+  text-transform: capitalize;
+}
+
+ul.recipe-step-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.recipe-step-number-box {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  bottom: -1.4rem;
+}
+
+.recipe-step-number {
+  font-size: 2rem;
+  border-radius: 99px;
+  padding: 0.2rem 2.4rem;
+  background-color: var(--light);
+  border: 1px solid var(--dark-muted);
+  text-align: center;
+}
+
+.recipe-step-heroimage {
+  border: 1px solid var(--dark-muted);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background-color: var(--dark);
+}
+.recipe-step-heroimage img {
+  flex-shrink: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.recipe-step-body {
+  padding: 2.4rem;
+  padding-top: 2.4rem;
+  line-height: 1.6;
+  border: 1px solid var(--dark-muted);
+  text-align: justify;
+  position: relative;
+}
+
+.recipe-step-body::first-letter {
+  background-color: var(--dark-muted);
+  color: var(--light);
+  padding: 0.8rem;
+  font-size: 4rem;
+  margin-right: 1rem;
+  position: absolute;
+  float: left;
 }
