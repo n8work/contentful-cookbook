@@ -2,14 +2,21 @@ import { useEffect, useState } from 'react';
 
 function RecipeComponent({ recipe }) {
   const [steps, setSteps] = useState([]);
+  const [ingredients, setIngredients] = useState([]);
 
   useEffect(() => {
     setSteps(recipe.steps);
+    setIngredients(recipe.ingredients);
   }, []);
 
-  function onClickRecipeStep(index) {
+  function onClickStep(index) {
     recipe.steps[index].complete = !recipe.steps[index].complete;
     setSteps([...recipe.steps]);
+  }
+
+  function onClickIngredient(index) {
+    recipe.ingredients[index].complete = !recipe.ingredients[index].complete;
+    setIngredients([...recipe.ingredients]);
   }
 
   // Return an empty fragment if the steps haven't been set
@@ -24,12 +31,25 @@ function RecipeComponent({ recipe }) {
       <div className="recipe-step-heroimage">
         <img src={recipe.image} alt={recipe.title} />
       </div>
+
+      <ul className="recipe-ingredients-list">
+        {recipe.ingredients.map((g, index) => (
+          <li
+            key={index}
+            className={`recipe-ingredient ${g.complete && 'complete'}`}
+            onClick={() => onClickIngredient(index)}
+          >
+            {g.complete && <i className="fas fa-check"></i>}
+            <p>{g.text}</p>
+          </li>
+        ))}
+      </ul>
       <ul className="recipe-step-list">
         {steps.map((d, index) => (
           <li
             key={index}
             className="recipe-step"
-            onClick={() => onClickRecipeStep(index)}
+            onClick={() => onClickStep(index)}
           >
             <div
               className={`recipe-step-number-box ${d.complete && 'complete'}`}
@@ -42,7 +62,7 @@ function RecipeComponent({ recipe }) {
         ))}
       </ul>
       {steps.every((d) => d.complete) && (
-        <h2 class="enjoy-message">Enjoy your homecooked meal!</h2>
+        <h2 className="enjoy-message">Enjoy your homecooked meal!</h2>
       )}
       <ul className="gallery">
         {recipe.gallery.map((g, index) => (
