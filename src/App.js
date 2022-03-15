@@ -12,8 +12,21 @@ function App() {
   const [recipes, setRecipes] = useState([]);
 
   useEffect(() => {
+    fetchRecipeTitles();
     fetchRecipes();
   }, []);
+
+  function fetchRecipeTitles() {
+
+    // ID und titel
+    const query = { content_type: 'wbsRecipe' };
+    console.log("QUERY: ", client.getEntries(query));
+    console.log ("function fetchRecipeTitles");
+
+/*    client.getEntries(query).then(function (untypedRecipes) {
+    }); */
+
+  }
 
   function fetchRecipes() {
     const query = { content_type: 'wbsRecipe' };

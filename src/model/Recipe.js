@@ -13,7 +13,7 @@ export default class Recipe {
   get slug() {
     return this.title.replaceAll(' ', '-').toLowerCase();
   }
-
+  
   static fromUntyped(data) {
     // console.log(data);
     const r = data.fields;
@@ -23,6 +23,9 @@ export default class Recipe {
 
     // Title
     const title = r.RecipeTitle;
+
+    // Slug
+    // const slug = data.sys.id;
 
     // Description
     const steps = r.RecipeDescription.content.map((p) => {
@@ -51,8 +54,9 @@ export default class Recipe {
 
     let recipe = new Recipe(id, title, steps, image, author, date, gallery);
 
-    console.log('======== RECIPE ========');
-    console.log(recipe);
+    // console.log('======== RECIPE ========');
+    // console.log("recipe.title: ", recipe.title);
+    // console.log("Slug / ID: ", slug);
     return recipe;
   }
 }
