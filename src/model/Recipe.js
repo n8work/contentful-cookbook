@@ -1,6 +1,5 @@
-
 export default class Recipe {
-  constructor(id, title, steps, image, author, date, gallery) {
+  constructor(id, title, steps, image, author, date, gallery, ingredients) {
     this.id = id;
     this.title = title; // string
     this.steps = steps; // [string, string, ...]
@@ -8,6 +7,7 @@ export default class Recipe {
     this.author = author; // {id:string, name:{first:string, last:string}, image:string}
     this.date = date; // Date
     this.gallery = gallery; // [string, string, ...]
+    this.ingredients = ingredients; // [string, string, ...]
   }
 
   get slug() {
@@ -52,7 +52,23 @@ export default class Recipe {
       ? r.RecipeImageGallery.map((g) => g.fields.file.url)
       : [];
 
-    let recipe = new Recipe(id, title, steps, image, author, date, gallery);
+    // Ingredients
+    const ingredients = r.ingredients
+      ? r.ingredients.map((ingredient) => {
+          return { text: ingredient, complete: false };
+        })
+      : [];
+
+    let recipe = new Recipe(
+      id,
+      title,
+      steps,
+      image,
+      author,
+      date,
+      gallery,
+      ingredients
+    );
 
     // console.log('======== RECIPE ========');
     // console.log("recipe.title: ", recipe.title);
