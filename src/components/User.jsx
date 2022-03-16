@@ -28,9 +28,6 @@ export default class User {
       id, fn, ln, userpic
     );
 
-    // console.log('======== RECIPE ========');
-    // console.log("recipe.title: ", recipe.title);
-    // console.log("Slug / ID: ", slug);
     return user;
   }
 }

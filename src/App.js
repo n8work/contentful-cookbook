@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import NavComponent from "./components/NavComponent";
 import RecipeComponent from "./components/RecipeComponent";
+import UserComponent from "./components/UserComponent";
 import Recipe from "./model/Recipe";
 import User from "./components/User";
 var contentful = require("contentful");
@@ -64,16 +65,11 @@ function App() {
           })}
         </ul>
 
-
-        <ul className="user-list">
-          {users.map((user) => {
-            return (
-              <li key={user.id} className="recipe-card">
-                {console.log("User: ", user)}
-              </li>
-            );
-          })}
+      <section className="container">
+        <ul className="recipe-list">
+            <UserComponent users={users} />
         </ul>
+      </section>
 
 
       </section>
