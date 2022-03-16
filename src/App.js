@@ -1,35 +1,27 @@
-import React, { useEffect, useState } from 'react';
-import RecipeComponent from './components/RecipeComponent';
-import Recipe from './model/Recipe';
-var contentful = require('contentful');
+import React, { useEffect, useState } from "react";
+import NavComponent from "./components/NavComponent";
+import RecipeComponent from "./components/RecipeComponent";
+import Recipe from "./model/Recipe";
+import User from "./components/User";
+var contentful = require("contentful");
 
 const client = contentful.createClient({
   space: process.env.REACT_APP_contentful_space,
-  accessToken: process.env.REACT_APP_contentful_token
+  accessToken: process.env.REACT_APP_contentful_token,
 });
 
 function App() {
   const [recipes, setRecipes] = useState([]);
+  const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    fetchRecipeTitles();
     fetchRecipes();
+    fetchUsers();
   }, []);
 
-  function fetchRecipeTitles() {
-
-    // ID und titel
-    const query = { content_type: 'wbsRecipe' };
-    console.log("QUERY: ", client.getEntries(query));
-    console.log ("function fetchRecipeTitles");
-
-/*    client.getEntries(query).then(function (untypedRecipes) {
-    }); */
-
-  }
 
   function fetchRecipes() {
-    const query = { content_type: 'wbsRecipe' };
+    const query = { content_type: "wbsRecipe" };
 
     client.getEntries(query).then(function (untypedRecipes) {
       // https://www.contentful.com/developers/docs/references/content-preview-api/#/reference/entries/entry
@@ -42,13 +34,23 @@ function App() {
     });
   }
 
+  function fetchUsers() {
+    const query = { content_type: "wbsCookbookUsers" };
+    console.log("user query: ", query);
+
+    client.getEntries(query).then(function (untypedUsers) {
+      setUsers(
+        untypedUsers.items.map((untypedUser) =>
+          User.fromUntyped(untypedUser)
+        )
+      );
+    });
+  }
+
   return (
     <div className="App">
       <header className="container">
-        <h1>Worldwide Cookbook</h1>
-        <p className="tagline">
-          Meals from around the world, for every occasion
-        </p>
+        <NavComponent />
       </header>
 
       <section className="container">
@@ -61,6 +63,19 @@ function App() {
             );
           })}
         </ul>
+
+
+        <ul className="user-list">
+          {users.map((user) => {
+            return (
+              <li key={user.id} className="recipe-card">
+                {console.log("User: ", user)}
+              </li>
+            );
+          })}
+        </ul>
+
+
       </section>
     </div>
   );
