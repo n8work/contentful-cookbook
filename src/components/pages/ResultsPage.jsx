@@ -1,3 +1,3 @@
 export default function ResultsPagege() {
-  return <div className="results">ResultsPage</div>;
+  return <article className="results">ResultsPage</article>;
 }

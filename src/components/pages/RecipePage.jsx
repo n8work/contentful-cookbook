@@ -1,9 +1,9 @@
 export default function RecipePage() {
 
   return (
-    <div className="recipePage">
+    <article className="recipePage">
        Recipe Page
-    </div>
+    </article>
   )
 
 }

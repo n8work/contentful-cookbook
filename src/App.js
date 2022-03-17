@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import NavComponent from './components/NavComponent';
 import RecipeComponent from './components/RecipeComponent';
+import User from './components/User';
 import UserCard from './components/UserCard';
 import Recipe from './model/Recipe';
-import User from './components/User';
+import Header from './components/Header';
 var contentful = require('contentful');
 
 const client = contentful.createClient({
@@ -48,7 +48,7 @@ function App() {
   return (
     <div className="App">
       <header className="container">
-        <NavComponent />
+        <Header />
       </header>
 
       <section className="container">

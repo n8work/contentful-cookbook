@@ -32,6 +32,15 @@ body {
   color: var(--dark);
 }
 
+article.page {
+  max-width: 96rem;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
 /* UTILITY */
 
 .container {
@@ -57,7 +66,24 @@ header > .tagline {
   opacity: 0.4;
 }
 
-/* ENTRY CARD */
+header ul {
+  display: flex;
+  gap: 2rem;
+}
+
+/* HOME PAGE */
+
+section#home > section.search {
+  width: 100%;
+}
+
+section.search > input {
+  padding: 1rem 2rem;
+  /* border-radius: 5px; */
+  /* border: none; */
+}
+
+/* RECIPE CARD */
 
 ul.recipe-list {
   padding: 2rem;
@@ -231,4 +257,13 @@ li.gallery-item {
 
 .gallery-item img:hover {
   opacity: 1;
+}
+
+/* FOOTER */
+
+footer {
+  padding: 6.4rem 0;
+  margin-top: 2.4rem !important;
+  border-top: 1px dashed var(--dark);
+  text-align: center;
 }
