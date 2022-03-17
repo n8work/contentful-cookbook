@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import NavComponent from './components/NavComponent';
 import RecipeComponent from './components/RecipeComponent';
-import UserComponent from './components/UserComponent';
+import UserCard from './components/UserCard';
 import Recipe from './model/Recipe';
 import User from './components/User';
 var contentful = require('contentful');
@@ -64,7 +64,7 @@ function App() {
 
         <section className="container">
           <ul className="recipe-list">
-            <UserComponent users={users} />
+            <UserCard users={users} />
           </ul>
         </section>
       </section>

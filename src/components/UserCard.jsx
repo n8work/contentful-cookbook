@@ -1,5 +1,5 @@
-export default function UserComponent({ users }) {
-  console.log("in uc: ", users);
+export default function UserCard({ users }) {
+  console.log('in uc: ', users);
 
   return (
     <>
@@ -7,7 +7,7 @@ export default function UserComponent({ users }) {
         {users.map((user) => {
           return (
             <li key={user.id} className="recipe-card">
-              {console.log("User: ", user)}
+              {console.log('User: ', user)}
               Username: {user.fn} {user.ln} <hr />
               Profile Image: <hr />
               <img src={`${user.userpic}`} alt="" />

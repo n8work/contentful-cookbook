@@ -1,4 +1,3 @@
-
 export default class User {
   constructor(id, fn, ln, userpic) {
     this.id = id;
@@ -8,7 +7,6 @@ export default class User {
   }
 
   static fromUntyped(data) {
-    
     const r = data.fields;
 
     // Id
@@ -24,9 +22,7 @@ export default class User {
     // Last Name
     const ln = r.lastName;
 
-    let user = new User(
-      id, fn, ln, userpic
-    );
+    let user = new User(id, fn, ln, userpic);
 
     return user;
   }
