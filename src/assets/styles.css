@@ -181,10 +181,13 @@ li.recipe-step {
   align-items: center;
   overflow: hidden;
   background-color: var(--dark);
+
+  max-height: 24rem;
 }
 
 .recipe-step-heroimage img {
-  flex-shrink: 0;
+  object-fit: cover;
+
   min-width: 100%;
   min-height: 100%;
 }
