@@ -1,22 +1,28 @@
-import React, { useEffect, useState } from 'react';
-import RecipeComponent from './components/RecipeComponent';
-import Recipe from './model/Recipe';
-var contentful = require('contentful');
+import React, { useEffect, useState } from "react";
+import NavComponent from "./components/NavComponent";
+import RecipeComponent from "./components/RecipeComponent";
+import UserComponent from "./components/UserComponent";
+import Recipe from "./model/Recipe";
+import User from "./components/User";
+var contentful = require("contentful");
 
 const client = contentful.createClient({
   space: process.env.REACT_APP_contentful_space,
-  accessToken: process.env.REACT_APP_contentful_token
+  accessToken: process.env.REACT_APP_contentful_token,
 });
 
 function App() {
   const [recipes, setRecipes] = useState([]);
+  const [users, setUsers] = useState([]);
 
   useEffect(() => {
     fetchRecipes();
+    fetchUsers();
   }, []);
 
+
   function fetchRecipes() {
-    const query = { content_type: 'wbsRecipe' };
+    const query = { content_type: "wbsRecipe" };
 
     client.getEntries(query).then(function (untypedRecipes) {
       // https://www.contentful.com/developers/docs/references/content-preview-api/#/reference/entries/entry
@@ -29,13 +35,23 @@ function App() {
     });
   }
 
+  function fetchUsers() {
+    const query = { content_type: "wbsCookbookUsers" };
+    console.log("user query: ", query);
+
+    client.getEntries(query).then(function (untypedUsers) {
+      setUsers(
+        untypedUsers.items.map((untypedUser) =>
+          User.fromUntyped(untypedUser)
+        )
+      );
+    });
+  }
+
   return (
     <div className="App">
       <header className="container">
-        <h1>Worldwide Cookbook</h1>
-        <p className="tagline">
-          Meals from around the world, for every occasion
-        </p>
+        <NavComponent />
       </header>
 
       <section className="container">
@@ -48,6 +64,14 @@ function App() {
             );
           })}
         </ul>
+
+      <section className="container">
+        <ul className="recipe-list">
+            <UserComponent users={users} />
+        </ul>
+      </section>
+
+
       </section>
     </div>
   );
