@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/contentful-cookbook/static/css/main.19522abe.css",
+    "main.js": "/contentful-cookbook/static/js/main.93f8df7f.js",
+    "index.html": "/contentful-cookbook/index.html",
+    "main.19522abe.css.map": "/contentful-cookbook/static/css/main.19522abe.css.map",
+    "main.93f8df7f.js.map": "/contentful-cookbook/static/js/main.93f8df7f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.19522abe.css",
+    "static/js/main.93f8df7f.js"
+  ]
+}
