@@ -6,17 +6,17 @@ export default function Header() {
   const { t, i18n } = useTranslation();
 
   const setLangEN = () => {
-    console.log("setLang -> EN");
+    console.log("set language to -> EN");
     i18n.changeLanguage("en");
   };
 
   const setLangDE = () => {
-    console.log("setLang -> DE");
+    console.log("set language to -> DE");
     i18n.changeLanguage("de");
   };
 
   const setLangFR = () => {
-    console.log("setLang -> FR");
+    console.log("set language to -> FR");
     i18n.changeLanguage("fr");
   };
 
@@ -32,16 +32,16 @@ export default function Header() {
 
       <div className="language-switcher">
         <button onClick={setLangEN} className="button-lang">
-          English 🇺🇸
+           🇺🇸
         </button>
         <button onClick={setLangDE} className="button-lang">
-          Deutsch 🇩🇪
+           🇩🇪
         </button>
         <button onClick={setLangFR} className="button-lang">
-          Français 🇫🇷
+           🇫🇷
         </button>
 
-      {/*
+        {/*
         <NavLink
           to="/en/"
           className={({ isActive }) => (isActive ? activeCn : deactiveCn)}
@@ -62,12 +62,8 @@ export default function Header() {
         </NavLink>
      */}
 
-
-        <h1> {t('cookbook.headline')}</h1>
-        <p className="tagline">
-        {t('cookbook.tagline')}
-        </p>
-
+        <h1> {t("cookbook.headline")}</h1>
+        <p className="tagline">{t("cookbook.tagline")}</p>
       </div>
     </>
   );
