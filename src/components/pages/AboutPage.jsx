@@ -1,9 +1,3 @@
 export default function AboutPage() {
-
-    return (
-      <div className="imprint">
-         AboutPage
-      </div>
-    )
-  
+  return <article className="page about">About</article>;
 }

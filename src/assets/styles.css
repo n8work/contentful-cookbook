@@ -41,6 +41,19 @@ article.page {
   gap: 2.4rem;
 }
 
+.btn {
+  text-decoration: none;
+  color: var(--dark-muted);
+  border-bottom: 1px solid var(--dark-muted);
+  transition: all 0.3s;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
+.btn:hover {
+  border-bottom: 1px solid #00000000;
+}
+
 /* UTILITY */
 
 .container {
@@ -56,19 +69,26 @@ article.page {
 
 header {
   padding: 6.4rem 0;
-  margin-bottom: 2.4rem !important;
+  margin-bottom: 3.4rem !important;
   border-bottom: 1px dashed var(--dark);
   text-align: center;
 }
 
+header > h1 {
+  margin-bottom: 0.4rem;
+}
+
 header > .tagline {
+  font-size: 1.4rem;
   text-transform: capitalize;
   opacity: 0.4;
 }
 
-header ul {
+header nav {
   display: flex;
-  gap: 2rem;
+  justify-content: center;
+  margin: 2.4rem;
+  gap: 1rem;
 }
 
 /* HOME PAGE */
