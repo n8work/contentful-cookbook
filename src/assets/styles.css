@@ -52,6 +52,35 @@ article.page {
   opacity: 0.6;
 }
 
+/* LANGUAGES */
+
+.language-switcher {
+  margin-bottom: .4rem !important;
+  text-align: center;
+}
+
+.button-lang {
+  font-family: 'Merriweather', serif;
+  text-transform: uppercase;
+  padding: .4rem;
+  margin: .4rem;
+  cursor: pointer;
+}
+
+.navlink-lang {
+  padding: .2rem;
+  margin: .2rem;
+  text-decoration: none;
+  border: 1px solid var(--light);
+  border-radius: 2rem;
+}
+.navlink-lang:hover {
+  background-color:rgba(36, 36, 36, 0.6);
+}
+.navlink-lang.active {
+  background-color:rgba(139, 139, 139, 0.6);
+}
+
 /* HEADER */
 
 header {
