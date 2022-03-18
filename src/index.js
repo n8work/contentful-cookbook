@@ -8,6 +8,7 @@ import AboutPage from './components/pages/AboutPage';
 import ErrorPage from './components/pages/ErrorPage';
 import HomePage from './components/pages/HomePage';
 import ImprintPage from './components/pages/ImprintPage';
+import './i18n';
 
 render(
   <>
