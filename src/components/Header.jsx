@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 export default function Header() {
-  const { i18n } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   const setLangEN = () => {
     console.log("setLang -> EN");
@@ -32,16 +32,16 @@ export default function Header() {
 
       <div className="language-switcher">
         <button onClick={setLangEN} className="button-lang">
-          English
+          English 🇺🇸
         </button>
         <button onClick={setLangDE} className="button-lang">
-          Deutsch
+          Deutsch 🇩🇪
         </button>
         <button onClick={setLangFR} className="button-lang">
-          Français
+          Français 🇫🇷
         </button>
 
-        {/* */}
+      {/*
         <NavLink
           to="/en/"
           className={({ isActive }) => (isActive ? activeCn : deactiveCn)}
@@ -60,7 +60,14 @@ export default function Header() {
         >
           🇫🇷
         </NavLink>
-        {/* */}
+     */}
+
+
+        <h1> {t('cookbook.headline')}</h1>
+        <p className="tagline">
+        {t('cookbook.tagline')}
+        </p>
+
       </div>
     </>
   );
