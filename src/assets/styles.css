@@ -279,6 +279,16 @@ li.gallery-item {
   opacity: 1;
 }
 
+/* RECIPE ERROR */
+
+.recipe-error {
+  text-align: center;
+}
+
+.recipe-error > h2 {
+  margin-bottom: 0.4rem;
+}
+
 /* FOOTER */
 
 footer {
