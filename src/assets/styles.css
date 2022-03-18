@@ -93,34 +93,25 @@ header nav {
 
 /* HOME PAGE */
 
-section#home > section.search {
-  width: 100%;
-}
-
 section.search > input {
   padding: 1rem 2rem;
   /* border-radius: 5px; */
   /* border: none; */
 }
 
+/* RECIPE PAGE */
+
 /* RECIPE CARD */
 
-ul.recipe-list {
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2rem;
-}
-
-li.recipe-card {
+.recipe-card {
   padding: 4rem;
   border-radius: 8px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 8px 0px;
   width: 64rem;
+  margin: 0 auto;
 }
 
-li.recipe-card > h2 {
+.recipe-card > h2 {
   text-align: center;
   margin-bottom: 1.2rem;
   text-transform: uppercase;
@@ -128,7 +119,7 @@ li.recipe-card > h2 {
   letter-spacing: 1.6px;
 }
 
-li.recipe-card > p.recipe-author {
+.recipe-card > p.recipe-author {
   text-align: center;
   padding-bottom: 2rem;
   color: var(--dark-muted);
@@ -293,7 +284,7 @@ li.gallery-item {
 
 footer {
   padding: 6.4rem 0;
-  margin-top: 2.4rem !important;
+  margin-top: 3.2rem !important;
   border-top: 1px dashed var(--dark);
   text-align: center;
 }
