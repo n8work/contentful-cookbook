@@ -101,8 +101,17 @@ section.search > input {
 
 /* RECIPE CARD */
 
+.recipe-cards {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, 1fr);
+}
+
 .recipe-card {
-  padding: 2rem;
+  padding: 1rem 2rem;
+  height: 8rem;
+  text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 8px 0px;
 }
 
 /* RECIPE */

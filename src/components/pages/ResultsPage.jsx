@@ -35,13 +35,15 @@ export default function ResultsPage() {
   }
 
   return (
-    <ul className="recipe-cards">
-      {recipes.map((recipe) => (
-        <li key={recipe.id}>
-          <RecipeCard recipe={recipe} />
-        </li>
-      ))}
-    </ul>
+    <article className="page">
+      <ul className="recipe-cards">
+        {recipes.map((recipe) => (
+          <li key={recipe.id}>
+            <RecipeCard recipe={recipe} />
+          </li>
+        ))}
+      </ul>
+    </article>
   );
   // return <article className="results">ResultsPage</article>;
 }
