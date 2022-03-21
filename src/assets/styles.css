@@ -32,6 +32,28 @@ body {
   color: var(--dark);
 }
 
+article.page {
+  max-width: 96rem;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.btn {
+  text-decoration: none;
+  color: var(--dark-muted);
+  border-bottom: 1px solid var(--dark-muted);
+  transition: all 0.3s;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
+.btn:hover {
+  border-bottom: 1px solid #00000000;
+}
+
 /* UTILITY */
 
 .container {
@@ -47,34 +69,49 @@ body {
 
 header {
   padding: 6.4rem 0;
-  margin-bottom: 2.4rem !important;
+  margin-bottom: 3.4rem !important;
   border-bottom: 1px dashed var(--dark);
   text-align: center;
 }
 
+header > h1 {
+  margin-bottom: 0.4rem;
+}
+
 header > .tagline {
+  font-size: 1.4rem;
   text-transform: capitalize;
   opacity: 0.4;
 }
 
-/* ENTRY CARD */
-
-ul.recipe-list {
-  padding: 2rem;
+header nav {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2rem;
+  justify-content: center;
+  margin: 2.4rem;
+  gap: 1rem;
 }
 
-li.recipe-card {
+/* HOME PAGE */
+
+section.search > input {
+  padding: 1rem 2rem;
+  /* border-radius: 5px; */
+  /* border: none; */
+}
+
+/* RECIPE PAGE */
+
+/* RECIPE CARD */
+
+.recipe-card {
   padding: 4rem;
   border-radius: 8px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 8px 0px;
   width: 64rem;
+  margin: 0 auto;
 }
 
-li.recipe-card > h2 {
+.recipe-card > h2 {
   text-align: center;
   margin-bottom: 1.2rem;
   text-transform: uppercase;
@@ -82,7 +119,7 @@ li.recipe-card > h2 {
   letter-spacing: 1.6px;
 }
 
-li.recipe-card > p.recipe-author {
+.recipe-card > p.recipe-author {
   text-align: center;
   padding-bottom: 2rem;
   color: var(--dark-muted);
@@ -231,4 +268,23 @@ li.gallery-item {
 
 .gallery-item img:hover {
   opacity: 1;
+}
+
+/* RECIPE ERROR */
+
+.recipe-error {
+  text-align: center;
+}
+
+.recipe-error > h2 {
+  margin-bottom: 0.4rem;
+}
+
+/* FOOTER */
+
+footer {
+  padding: 6.4rem 0;
+  margin-top: 3.2rem !important;
+  border-top: 1px dashed var(--dark);
+  text-align: center;
 }
