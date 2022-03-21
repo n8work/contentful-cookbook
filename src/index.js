@@ -9,6 +9,7 @@ import ErrorPage from './components/pages/ErrorPage';
 import HomePage from './components/pages/HomePage';
 import ImprintPage from './components/pages/ImprintPage';
 import RecipePage from './components/pages/RecipePage';
+import ResultsPage from './components/pages/ResultsPage';
 
 render(
   <>
@@ -16,6 +17,7 @@ render(
       <Header />
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/search" element={<ResultsPage />} />
         <Route path="/recipe/:id" element={<RecipePage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/imprint" element={<ImprintPage />} />

@@ -23,7 +23,7 @@ function RecipeComponent({ recipe }) {
   if (!steps) return <></>;
 
   return (
-    <div className="recipe-card">
+    <div className="recipe">
       <h2>{recipe.title}</h2>
       <p className="recipe-author">
         by {recipe.author.name.first} {recipe.author.name.last}

@@ -55,7 +55,7 @@ function App() {
         <ul className="recipe-list">
           {recipes.map((recipe) => {
             return (
-              <li key={recipe.id} className="recipe-card">
+              <li key={recipe.id}>
                 <RecipeComponent recipe={recipe} />
               </li>
             );

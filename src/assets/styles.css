@@ -99,11 +99,15 @@ section.search > input {
   /* border: none; */
 }
 
-/* RECIPE PAGE */
-
 /* RECIPE CARD */
 
 .recipe-card {
+  padding: 2rem;
+}
+
+/* RECIPE */
+
+.recipe {
   padding: 4rem;
   border-radius: 8px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 8px 0px;
@@ -111,7 +115,7 @@ section.search > input {
   margin: 0 auto;
 }
 
-.recipe-card > h2 {
+.recipe > h2 {
   text-align: center;
   margin-bottom: 1.2rem;
   text-transform: uppercase;
@@ -119,7 +123,7 @@ section.search > input {
   letter-spacing: 1.6px;
 }
 
-.recipe-card > p.recipe-author {
+.recipe > p.recipe-author {
   text-align: center;
   padding-bottom: 2rem;
   color: var(--dark-muted);
