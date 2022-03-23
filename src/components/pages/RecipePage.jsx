@@ -30,7 +30,7 @@ export default function RecipePage() {
   }, []);
 
   return (
-    <article className="page recipe">
+    <article className="page">
       {recipe && <RecipeComponent recipe={recipe} />}
 
       {broken && (
